@@ -27,7 +27,7 @@ Keep your existing `mcpServers` in `mcp-adapter.json`. Merge these adapter setti
 Load the complete extension once, with built-in MCP disabled:
 
 ```sh
-pi --no-mcp -e /absolute/path/to/pi-mcp-complete/complete.ts
+pi --no-mcp -e /absolute/path/to/mcp-frontier/complete.ts
 ```
 
 Use Pi 1.3, not an older global executable. `codemode.mode: "only"` changes model presentation, not authorization: do not remove the underlying tools with an allowlist or mark them hidden. The script can discover them with `searchTools()`, `describeTool()` and `ALL_TOOLS`, then call `tools.<registered_name>(args)`. Advanced control tools include `tools.mcp_events`, `tools.mcp_skills` and `tools.mcp_protocol`.
