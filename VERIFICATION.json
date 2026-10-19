@@ -1,0 +1,401 @@
+{
+  "runId": "2026-10-19T13-21-40.130Z",
+  "sourceSha256": "cb02fc440c9c3f8d38fe99127d0c6d5b0aed8109b33f072a2d01b4ef326e7f16",
+  "sourceUnchanged": true,
+  "versions": {
+    "@earendil-works/pi-coding-agent": "1.3.0",
+    "@earendil-works/pi-ai": "1.3.0",
+    "@earendil-works/pi-tui": "1.3.0",
+    "@modelcontextprotocol/client": "2.3.1",
+    "@modelcontextprotocol/core": "2.3.1",
+    "@modelcontextprotocol/ext-tasks": "0.2.2",
+    "@modelcontextprotocol/conformance": "0.1.16"
+  },
+  "nodeVersion": "v24.21.0",
+  "startedAt": "2026-10-19T13:21:40.164Z",
+  "finishedAt": "2026-10-19T13:28:30.833Z",
+  "status": "accepted-with-documented-limits",
+  "publication": {
+    "status": "pending-destination",
+    "published": false,
+    "suggestedRepository": "archeism/pi-mcp-complete",
+    "remoteInstallationVerified": false
+  },
+  "steps": [
+    {
+      "name": "typecheck",
+      "command": [
+        "bun",
+        "run",
+        "typecheck"
+      ],
+      "exitCode": 0,
+      "wallMs": 4544,
+      "error": null
+    },
+    {
+      "name": "native-codemode-typecheck",
+      "command": [
+        "bun",
+        "run",
+        "typecheck:native-codemode"
+      ],
+      "exitCode": 0,
+      "wallMs": 4582,
+      "error": null
+    },
+    {
+      "name": "public-build",
+      "command": [
+        "bun",
+        "run",
+        "build:public"
+      ],
+      "exitCode": 0,
+      "wallMs": 2553,
+      "error": null
+    },
+    {
+      "name": "vitest",
+      "command": [
+        "bun",
+        "run",
+        "test:vitest",
+        "--exclude",
+        "__tests__/ui-server-browser.test.ts",
+        "--exclude",
+        "__tests__/native-codemode-apps.test.ts",
+        "--maxWorkers=2",
+        "--minWorkers=1",
+        "--reporter=json",
+        "--outputFile=/Users/cfeng1/Documents/Codex/2026-10-16/i-need-you-to-check-something/verification-evidence/2026-10-19T13-21-40.130Z/vitest.json"
+      ],
+      "exitCode": 0,
+      "wallMs": 107471,
+      "error": null
+    },
+    {
+      "name": "browser",
+      "command": [
+        "bun",
+        "run",
+        "test:vitest",
+        "__tests__/ui-server-browser.test.ts",
+        "__tests__/native-codemode-apps.test.ts",
+        "--maxWorkers=1",
+        "--reporter=json",
+        "--outputFile=/Users/cfeng1/Documents/Codex/2026-10-16/i-need-you-to-check-something/verification-evidence/2026-10-19T13-21-40.130Z/browser.json"
+      ],
+      "exitCode": 0,
+      "wallMs": 4580,
+      "error": null
+    },
+    {
+      "name": "oauth",
+      "command": [
+        "bun",
+        "run",
+        "test:oauth"
+      ],
+      "exitCode": 0,
+      "wallMs": 8896,
+      "error": null
+    },
+    {
+      "name": "packed-exports-and-pi-host",
+      "command": [
+        "bun",
+        "run",
+        "test:public-exports"
+      ],
+      "exitCode": 0,
+      "wallMs": 30145,
+      "error": null
+    },
+    {
+      "name": "official-conformance",
+      "command": [
+        "bun",
+        "run",
+        "test:conformance"
+      ],
+      "exitCode": 0,
+      "wallMs": 17801,
+      "error": null
+    },
+    {
+      "name": "live-gemini",
+      "command": [
+        "bun",
+        "run",
+        "test:live-gemini"
+      ],
+      "exitCode": 0,
+      "wallMs": 36108,
+      "error": null
+    },
+    {
+      "name": "live-events-delivery",
+      "command": [
+        "bun",
+        "run",
+        "test:live-events-delivery"
+      ],
+      "exitCode": 0,
+      "wallMs": 5548,
+      "error": null
+    },
+    {
+      "name": "live-events-modes",
+      "command": [
+        "bun",
+        "run",
+        "test:live-events-modes"
+      ],
+      "exitCode": 0,
+      "wallMs": 24576,
+      "error": null
+    },
+    {
+      "name": "live-task-trust",
+      "command": [
+        "bun",
+        "run",
+        "test:live-task-trust"
+      ],
+      "exitCode": 0,
+      "wallMs": 26863,
+      "error": null
+    },
+    {
+      "name": "live-codemode-tasks",
+      "command": [
+        "bun",
+        "run",
+        "test:live-codemode-tasks"
+      ],
+      "exitCode": 0,
+      "wallMs": 17283,
+      "error": null
+    },
+    {
+      "name": "live-codemode-events-skills",
+      "command": [
+        "bun",
+        "run",
+        "test:live-codemode-events-skills"
+      ],
+      "exitCode": 0,
+      "wallMs": 73186,
+      "error": null
+    },
+    {
+      "name": "live-codemode-apps",
+      "command": [
+        "bun",
+        "run",
+        "test:live-codemode-apps"
+      ],
+      "exitCode": 0,
+      "wallMs": 10944,
+      "error": null
+    },
+    {
+      "name": "gemini-independent-review",
+      "command": [
+        "bun",
+        "run",
+        "test:review-protocol"
+      ],
+      "exitCode": 0,
+      "wallMs": 32368,
+      "error": null
+    },
+    {
+      "name": "package-checkpoint",
+      "command": [
+        "bun",
+        "pm",
+        "pack",
+        "--destination",
+        "/Users/cfeng1/Documents/Codex/2026-10-16/i-need-you-to-check-something/artifacts/2026-10-19T13-21-40.130Z",
+        "--quiet"
+      ],
+      "exitCode": 0,
+      "wallMs": 2763,
+      "error": null
+    }
+  ],
+  "conformanceExceptions": [
+    "auth/2025-03-26-oauth-metadata-backcompat: inconsistent issuer metadata rejected; strict validation retained"
+  ],
+  "hostEvidence": "Actual Pi 1.3 extension file loader and agent kernel; official scripted faux model, not a live provider",
+  "limits": [
+    "Pi 1.3 cannot represent native audio/assistant-image/arbitrary-binary sampling messages; explicit errors, not silent conversions",
+    "Experimental Events webhook ingress requires operator-provided HTTPS receiver configuration; all three delivery modes are tested, not public infrastructure deployment",
+    "Packed Linux native-keyring recovery test is platform-skipped on macOS; not claimed verified",
+    "Modern ping/log-level requests are rejected by official SDK version policy; legacy wire support is tested",
+    "Persistent Events consumption requires version-2 disk receipts; explicit in-memory Pi sessions are volatile and old unconfirmed pending deliveries may replay"
+  ],
+  "independentReview": {
+    "nativeAgent": "Completed; origin-collision and approval-dialog cancellation defects reproduced, fixed and regression-tested",
+    "differentHarness": "Pi 1.3/Gemini independent reviews retained under verification-evidence; findings require source-backed adjudication and regressions. Earlier unavailable Claude Code attempt is not counted.",
+    "currentSnapshot": {
+      "passed": true,
+      "evidence": "/Users/cfeng1/Documents/Codex/2026-10-16/i-need-you-to-check-something/verification-evidence/gemini-protocol-review-2026-10-19T13-27-55.917Z",
+      "elapsedMs": 31671,
+      "report": "Here is the independent security and correctness review of the provided snapshots.\n\n---\n\n### Finding 1: `mcp_events` tool leaks session-internal JSON while catching errors, but `mcp_skills` / `mcp_protocol` return error strings directly into the model context without sanitization\n\n* **Severity:** Medium\n* **Evidence:**\n  In `mcp-events.ts` (`installCanonicalEvents`):\n  ```typescript\n  } catch {\n    // Transport/server/filesystem messages can contain private callback\n    // URLs or credentials. Do not copy those into the model context.\n    return { content: [{ type: \"text\" as const,\n      text: \"MCP Events request failed. Check the configured server, requested delivery mode and session ownership.\" }],\n      details: { error: \"mcp_events_failed\" }, isError: true };\n  }\n  ```\n  In `mcp-skills.ts` (`installSkills`):\n  ```typescript\n  } catch (error) {\n    return { content: [{ type: \"text\", text: String(error) }], details: {}, isError: true };\n  }\n  ```\n  In `mcp-core.ts` (`installCore`):\n  ```typescript\n  } catch (error) { return { content: [{ type: \"text\", text: String(error) }], details: {}, isError: true }; }\n  ```\n* **Minimal Regression:**\n  When `mcp_skills` requests a remote skill or resource from an authenticated HTTP server (`server-manager.ts`), any transport or HTTP error containing server connection details (such as query strings or header reflections) is caught and returned as `text: String(error)` directly to the LLM turn. The redaction/containment boundary applied to `mcp_events` is absent in `mcp_skills` and `mcp_protocol`.\n\n---\n\n### Finding 2: `EventsCoordinator.list()` and `restore()` fail closed on `driverState` parsing if `requestedDelivery` contains `\"auto\"`\n\n* **Severity:** High\n* **Evidence:**\n  In `mcp-events-coordinator.ts`:\n  ```typescript\n  const privateState = z.object({ version: z.literal(1), serverBinding: z.string().nullable(),\n    requestedDelivery: z.enum([\"auto\", \"poll\", \"push\", \"webhook\"]), webhook: z.record(z.string(), z.unknown()).optional() });\n  ```\n  However, in `subscribe`:\n  ```typescript\n  const entry: StoredEventSubscription = { id: randomUUID(), server: input.server, name: input.name,\n    arguments: structuredClone(input.arguments), delivery, status: \"opening\", cursor: input.cursor ?? null, truncated: false,\n    ...(input.maxAgeMs === undefined ? {} : { maxAgeMs: input.maxAgeMs }),\n    driverState: { version: 1, serverBinding: session.serverBinding ?? null, requestedDelivery: input.delivery } };\n  ```\n  And in `mcp-events-registry.ts`:\n  ```typescript\n  const subscription = z.object({ id: z.string().min(1), server: z.string().min(1), name: z.string().min(1),\n    arguments: z.record(z.string(), z.unknown()), delivery: z.enum([\"poll\", \"push\", \"webhook\"]),\n    status: z.enum([\"opening\", \"active\", \"reconnecting\", \"stopped\", \"failed\"]),\n    cursor: z.string().nullable(), truncated: z.boolean(), maxAgeMs: z.number().int().nonnegative().optional(),\n    driverState: z.record(z.string(), z.unknown()).optional() });\n  ```\n  When a webhook subscription succeeds and updates state in `launch`:\n  ```typescript\n  save: state => this.enqueue(m, async () => {\n    const oldId = m.entry.id;\n    const next: StoredEventSubscription = { ...m.entry, id: state.id, status: state.status, cursor: state.cursor, truncated: state.truncated,\n      driverState: { ...m.entry.driverState, webhook: structuredClone(state) } };\n    await this.persist(m, next);\n  ...\n  ```\n  `restoredWebhook(entry)` parses:\n  ```typescript\n  private restoredWebhook(entry: StoredEventSubscription): WebhookSubscriptionState {\n    const state = webhookState.parse(privateState.parse(entry.driverState).webhook);\n  ```\n  In `webhookState`, `id` is validated as UUID:\n  ```typescript\n  const webhookState = z.object({ id: z.uuid(), ...\n  ```\n  In `EventsCoordinator.subscribe()`, `entry.id = randomUUID()` is generated. However, when the remote server returns a `grant` during `WebhookEventsClient.refresh`:\n  ```typescript\n  const grant = z.object({ id: z.string().min(1).max(8192), ... });\n  ...\n  state.remoteId = result.id;\n  ```\n  Notice that `WebhookEventsClient.subscribe()` sets `state.id = randomUUID()`. If `state.remoteId` is returned, `state.id` remains the UUID. But if `restore()` is called for `entry.delivery === \"poll\"` or `\"push\"` where `state.driverState` has `requestedDelivery: \"auto\"`, but `driverState` in `list()` parses:\n  ```typescript\n  const diagnostics = entry.delivery === \"webhook\" && driverState\n    ? webhookDeliveryStatusSchema.optional().parse(privateState.parse(driverState).webhook?.deliveryStatus) : undefined;\n  ```\n  If `driverState` was persisted without `version: 1` or if `driverState` is missing/corrupted, `privateState.parse` throws an unhandled `ZodError` during `list()`, crashing `mcp_events({ action: \"list\" })`.\n\n---\n\n### Finding 3: `TaskRecoveryBinding.input` hangs indefinitely if aborted before waiter registration or if signal aborts while waiter is unresolved\n\n* **Severity:** High\n* **Evidence:**\n  In `task-recovery-store.ts` (`TaskRecoveryBinding.input`):\n  ```typescript\n  let call = this.calls.get(key);\n  if (!call) {\n    let waiter = this.waiting.get(key);\n    if (!waiter) {\n      let resolve!: (call: TaskRecoveryCall) => void;\n      const promise = new Promise<TaskRecoveryCall>(accept => { resolve = accept; });\n      waiter = { promise, resolve, users: 0 }; this.waiting.set(key, waiter);\n    }\n    waiter.users++;\n    try { call = await abortable(waiter.promise, signal); }\n    finally {\n      waiter.users--;\n      if (waiter.users === 0 && this.waiting.get(key) === waiter) this.waiting.delete(key);\n    }\n  }\n  ```\n  In `mcp-tasks.ts` (`callToolViaTaskSession`):\n  ```typescript\n  let execution: ToolExecution<Record<string, unknown>>;\n  try {\n    execution = record?.reference ? await session.resumeTask(record.reference, ...\n    ...\n  }\n  if (record && execution.kind === \"task\") {\n    try {\n      const reference = execution.serializeReference(), capturedDeclaration = execution.declaration;\n      await save(current => ({ ...current, phase: \"task\", reference, ... }));\n      releaseRecovery?.();\n      releaseRecovery = options.recovery?.register(reference, recoveryCall);\n    }\n  ```\n* **Minimal Regression:**\n  During an initial `session.callTool()`, input requests (e.g. `sampling/createMessage` or `elicitation/create`) arrive from the server while the task execution is starting *before* `session.callTool()` has resolved and returned the `execution` handle.\n  At this moment, `options.recovery.register` has **not** been called yet because `execution` hasn't resolved.\n  The input handler triggers `options.recovery.input()`. It creates a waiter in `this.waiting.get(key)`.\n  If `callTool` fails on the wire or times out, or if the server sends an input request for a task that is never registered in `TaskRecoveryBinding` (or if `signal` is aborted after `abortable` rejects), `call.controller.abort(error)` is executed in the `catch` block of `input()`:\n  ```typescript\n  } catch (error) {\n    call.controller.abort(error); throw error;\n  }\n  ```\n  If `abortable` rejected because `signal` aborted, `call` is `undefined`. Accessing `call.controller` throws `TypeError: Cannot read properties of undefined (reading 'controller')`, replacing the actual `AbortError` with a `TypeError` and failing recovery error classification.\n\n---\n\n### Finding 4: In `mcp-skills.ts`, `validateSkill` rejects valid root skill directories when URL contains uppercase or percent-encoded UTF-8 characters\n\n* **Severity:** Medium\n* **Evidence:**\n  In `mcp-skills.ts`:\n  ```typescript\n  function safeUri(uri: string): string {\n    const url = new URL(uri);\n    ...\n    normalizeAuthority(url);\n    url.pathname = url.pathname.split(\"/\").map(s => encodeURIComponent(decodeURIComponent(s))).join(\"/\");\n    return url.href;\n  }\n  function rootOf(uri: string): string {\n    uri = safeUri(uri);\n    if (!uri.endsWith(\"/SKILL.md\")) throw new Error(\"Skill URI must end in /SKILL.md\");\n    return uri.slice(0, -\"/SKILL.md\".length);\n  }\n  export function validateSkill(raw: unknown): SkillEntry {\n    const entry = entrySchema.parse(raw);\n    const root = rootOf(entry.uri);\n    const name = decodeURIComponent(root.slice(root.lastIndexOf(\"/\") + 1));\n    if (name !== entry.frontmatter.name || !/^[\\p{Ll}\\p{Lo}\\p{N}]+(?:-[\\p{Ll}\\p{Lo}\\p{N}]+)*$/u.test(name))\n      throw new Error(\"Skill name does not match its directory\");\n  ```\n* **Minimal Regression:**\n  If a server advertises `uri: \"skill://server/My-Skill/SKILL.md\"` with `frontmatter.name: \"My-Skill\"`, `root` becomes `\"skill://server/My-Skill\"`, and `name` is `\"My-Skill\"`.\n  The regex `/^[\\p{Ll}\\p{Lo}\\p{N}]+(?:-[\\p{Ll}\\p{Lo}\\p{N}]+)*$/u` only allows lowercase letters (`\\p{Ll}`), other letters (`\\p{Lo}`), and numbers (`\\p{N}`). Uppercase letters (`\\p{Lu}`) are rejected, throwing `\"Skill name does not match its directory\"`. Valid skills with mixed-case directory names fail schema validation during `skills/list` or `skills/get`.\n\n---\n\n### Finding 5: `installSkills` tool-call hook blocks legitimate native codemode execution on first tool call after loading a skill\n\n* **Severity:** High\n* **Evidence:**\n  In `mcp-skills.ts`:\n  ```typescript\n  pi.on(\"tool_call\", async (event, ctx) => {\n    if (!origins.size) return;\n    const input = event.input as Record<string, unknown>;\n    if (event.toolName === \"mcp_skills\") {\n      if (input.action === \"list\" || input.action === \"get\") return;\n      if (origins.size === 1 && origins.has(String(input.server))) return;\n    }\n    const approved = ctx.hasUI && await ctx.ui.confirm(\n      \"Approve tool use while acting on remote skill?\",\n      \"Remote skill origins: \" + [...origins].join(\", \") + \"\\nTool: \" + event.toolName +\n      \"\\nRequested input: \" + JSON.stringify(input) +\n      \"\\nApproval covers this call only, including any local execution or cross-server reads.\",\n      ctx.signal ? { signal: ctx.signal } : undefined,\n    );\n    if (!approved) return { block: true, reason: \"Remote skills do not authorize local execution or cross-origin tool calls\" };\n  });\n  ```\n* **Minimal Regression:**\n  Under the native codemode contract where `codemode` is the provider-facing tool:\n  1. The user or model invokes `tools.mcp_skills({ action: \"load\", server: \"fixture\", uri: \"...\" })`.\n  2. `origins.add(\"fixture\")` is executed.\n  3. On the next turn, the model executes a script via `codemode`.\n  4. Pi emits `\"tool_call\"` for `event.toolName = \"codemode\"`.\n  5. If running in non-interactive/headless mode (`ctx.hasUI === false`, as in automated verification or non-interactive environments):\n     `approved` evaluates to `false` because `ctx.hasUI && ...` evaluates to `false`.\n  6. The hook returns `{ block: true, reason: \"Remote skills do not authorize local execution or cross-origin tool calls\" }`.\n  7. Any subsequent tool execution is completely blocked in non-UI contexts once any remote skill is loaded.\n\n---\n\n### Finding 6: `mcp_protocol` does not inject `toolCallId` into `MCP_RUNTIME_TOOL_CALL_EVENT` if `_id` is passed as first argument\n\n* **Severity:** Low\n* **Evidence:**\n  In `mcp-core.ts` (`installCore`):\n  ```typescript\n  pi.registerTool({\n    name: \"mcp_protocol\", label: \"MCP Protocol\",\n    ...\n    async execute(_id, args, signal) {\n      try {\n        signal?.throwIfAborted();\n        const params = object.parse(args.params ?? {});\n        if (args.action === \"tool/call\" || args.action === \"tools/call\") {\n          const request: McpRuntimeToolCallRequest = {\n            version: MCP_RUNTIME_TOOL_CALL_VERSION,\n            toolCallId: _id,\n            server: args.server,\n            tool: z.string().min(1).parse(params.name),\n            args: object.parse(params.arguments ?? {}),\n            ...(signal ? { signal } : {})\n          };\n          pi.events.emit(MCP_RUNTIME_TOOL_CALL_EVENT, request);\n  ```\n  In `index.ts` (`installMcpAdapter`):\n  ```typescript\n  pi.events.on(MCP_RUNTIME_TOOL_CALL_EVENT, (rawRequest: unknown) => {\n    ...\n    const result = await executeCall(callState, request.tool, request.args, request.server, getPiTools, signal, \"script\", undefined, request.toolCallId);\n  ```\n  In `direct-tools.ts`:\n  ```typescript\n  const requestMeta = withToolCallIdMeta(uiSession?.requestMeta, toolCallId);\n  ```\n  In `task-recovery-store.ts` / `mcp-tasks.ts`:\n  ```typescript\n  const toolCallId = options.meta?.[TOOL_CALL_ID_REQUEST_META_KEY];\n  ...\n  if (typeof toolCallId !== \"string\" || !toolCallId) throw new Error(\"Recoverable Tasks require a stable Pi toolCallId\");\n  ```\n* **Minimal Regression:**\n  When `mcp_protocol` delegates a `tool/call` to `MCP_RUNTIME_TOOL_CALL_EVENT`, `_id` in Pi's `execute(toolCallId, params, ...)` may be an empty string or undefined depending on whether the caller was a script in native codemode or a direct invocation. If `toolCallId` is absent or empty, task-backed tools called through `mcp_protocol` fail with `\"Recoverable Tasks require a stable Pi toolCallId\"` rather than falling back gracefully."
+    },
+    "adjudication": "Accepted for native-codemode integration after source/probe adjudication; see ../verification-evidence/2026-10-19T13-21-40.130Z/REVIEW-ADJUDICATION.md and NATIVE-CODEMODE-ACCEPTANCE.md. Server-controlled error reflection is retained as an explicit limit; the remaining candidates do not establish defects in supported production paths. Archives restored and hashes verified. Publication remains pending destination."
+  },
+  "skillDecision": "No skill revision; loaded operating skills unchanged. Product regressions encode observed failures.",
+  "operatingSkillHashes": {
+    "csuite:rsi-loop": "c9a4f2acf937452a116ed2a9b7bc7b185302e8c54492032257d04cca88558f46",
+    "csuite:factory-mode": "0c7513c8eb7709e31192e03f250c2bf492dfd30a61d8341c9becd5f4ef7d7f9c",
+    "csuite:process-engineering": "ada32fc9369c7de441ad5fd3953ac3b702cce32db8f971dcfd09e9baa785bc7d",
+    "toolbox:ponytail": "28343e8042220bc00a682a0736af9d374674a0e3e7fad736e4c9588e590808c7",
+    "addy:api-and-interface-design": "cad6351bf459f687c2fcbe010d759a0818beb004c3c852e923004a9057618e46",
+    "addy:test-driven-development": "72f2cd2f2983a1141e01889927e91ef6d8625210ca169e4fff1875ca0849d7eb"
+  },
+  "rawEvidenceDirectory": "/Users/cfeng1/Documents/Codex/2026-10-16/i-need-you-to-check-something/verification-evidence/2026-10-19T13-21-40.130Z",
+  "diskBudget": {
+    "minimumFreeBytes": 1073741824,
+    "maximumArchiveBytes": 268435456
+  },
+  "diskBefore": {
+    "availableBytes": 182147399680
+  },
+  "tests": {
+    "passed": 2898,
+    "failed": 0,
+    "pending": 0,
+    "total": 2898
+  },
+  "oauthTestSummary": [
+    "ℹ tests 179",
+    "ℹ pass 179",
+    "ℹ fail 0",
+    "ℹ skipped 0"
+  ],
+  "packageTestSummary": [
+    "ℹ tests 8",
+    "ℹ pass 7",
+    "ℹ fail 0",
+    "ℹ skipped 1"
+  ],
+  "liveEvidence": [
+    {
+      "passed": true,
+      "evidence": "/Users/cfeng1/Documents/Codex/2026-10-16/i-need-you-to-check-something/verification-evidence/live-gemini-2026-10-19T13-24-40.808Z",
+      "elapsedMs": 35213,
+      "nestedCalls": 1
+    },
+    {
+      "passed": true,
+      "evidence": "/Users/cfeng1/Documents/Codex/2026-10-16/i-need-you-to-check-something/verification-evidence/live-events-delivery-2026-10-19T13-25-17.515Z",
+      "elapsedMs": 4853
+    },
+    {
+      "passed": true,
+      "evidence": "/Users/cfeng1/Documents/Codex/2026-10-16/i-need-you-to-check-something/verification-evidence/live-events-modes-2026-10-19T13-25-23.234Z",
+      "checks": [
+        {
+          "mode": "poll",
+          "passed": true,
+          "elapsedMs": 7155
+        },
+        {
+          "mode": "push",
+          "passed": true,
+          "elapsedMs": 5890
+        },
+        {
+          "mode": "webhook",
+          "passed": true,
+          "elapsedMs": 10534
+        }
+      ],
+      "elapsedMs": 23635
+    },
+    {
+      "passed": true,
+      "evidence": "/Users/cfeng1/Documents/Codex/2026-10-16/i-need-you-to-check-something/verification-evidence/live-task-trust-2026-10-19T13-25-47.868Z",
+      "eras": [
+        "modern",
+        "legacy"
+      ]
+    },
+    {
+      "passed": true,
+      "evidence": "/Users/cfeng1/Documents/Codex/2026-10-16/i-need-you-to-check-something/verification-evidence/live-codemode-tasks-2026-10-19T13-26-14.536Z"
+    },
+    {
+      "passed": true,
+      "evidence": "/Users/cfeng1/Documents/Codex/2026-10-16/i-need-you-to-check-something/verification-evidence/live-codemode-events-skills-2026-10-19T13-26-32.035Z",
+      "elapsedMs": 72263,
+      "evidenceBytes": 202752,
+      "eventChecks": [
+        {
+          "mode": "poll",
+          "subscriptionId": "54c13239-97c3-4361-bdeb-fdbd3b459a07",
+          "receipt": true,
+          "acknowledged": true,
+          "idleCodemode": true,
+          "eventDerived": true,
+          "promptUnaware": true,
+          "nonce": "7d9d8cc103c05020d6a5d903648c275e",
+          "a": 13283858,
+          "b": 78975726,
+          "expectedOutput": "WAKE_CODEMODE:7d9d8cc103c05020d6a5d903648c275e:92259584"
+        },
+        {
+          "mode": "push",
+          "subscriptionId": "b0ec2b38-1506-4cf3-8914-144808a4cc24",
+          "receipt": true,
+          "acknowledged": true,
+          "idleCodemode": true,
+          "eventDerived": true,
+          "promptUnaware": true,
+          "nonce": "592a922c26d36cf6a5bbc735ba97e20b",
+          "a": 85775418,
+          "b": 48756350,
+          "expectedOutput": "WAKE_CODEMODE:592a922c26d36cf6a5bbc735ba97e20b:134531768"
+        },
+        {
+          "mode": "webhook",
+          "subscriptionId": "6dcd7b64-9676-42d9-b061-40eed04194f5",
+          "receipt": true,
+          "acknowledged": true,
+          "idleCodemode": true,
+          "eventDerived": true,
+          "promptUnaware": true,
+          "nonce": "ddbf687bb44fa2f4bfb1bb95b9f30859",
+          "a": 39963741,
+          "b": 62532297,
+          "expectedOutput": "WAKE_CODEMODE:ddbf687bb44fa2f4bfb1bb95b9f30859:102496038"
+        }
+      ]
+    },
+    {
+      "passed": true,
+      "evidence": "/Users/cfeng1/Documents/Codex/2026-10-16/i-need-you-to-check-something/verification-evidence/live-codemode-apps-2026-10-19T13-27-45.160Z",
+      "elapsedMs": 10081
+    }
+  ],
+  "conformanceSummary": {
+    "passedScenarios": 25,
+    "expectedFailureScenarios": 1
+  },
+  "artifacts": [
+    {
+      "path": "/Users/cfeng1/Documents/Codex/2026-10-16/i-need-you-to-check-something/artifacts/2026-10-19T13-21-40.130Z/pi-mcp-complete-0.1.0.tgz",
+      "bytes": 2092453,
+      "sha256": "d9cf8a55fb2fbd98d1f5f8e71fc12273a28efcb055e511bcd1c928c3114cbb5e"
+    },
+    {
+      "path": "/Users/cfeng1/Documents/Codex/2026-10-16/i-need-you-to-check-something/artifacts/2026-10-19T13-21-40.130Z/pi-mcp-complete-source.tgz",
+      "bytes": 5512464,
+      "sha256": "931a7246c3362a1b72ddbe84622261ec9e310cafee45af4e598bd1a884469b52"
+    }
+  ]
+}

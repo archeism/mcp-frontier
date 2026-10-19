@@ -1,0 +1,10 @@
+# Known gaps in pi-mcp-adapter's MCP client conformance coverage.
+# Remove an entry as soon as its scenario passes. The conformance CLI treats a
+# passing baseline entry as stale and fails the run.
+client:
+  # The 2025-03-26 fallback scenario serves authorization metadata whose issuer
+  # differs from the identifier used to fetch it. Stable SDK v2 rejects that
+  # mismatch per RFC 8414 §3.3; the adapter intentionally keeps the strict
+  # mix-up protection instead of enabling the SDK's security-weakening opt-out.
+  - auth/2025-03-26-oauth-metadata-backcompat
+

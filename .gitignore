@@ -1,0 +1,18 @@
+node_modules/
+dist/
+.pi/
+conformance/results/
+*.log
+.DS_Store
+
+# bun.lock is the reproducible dependency checkpoint.
+bun.lockb
+conformance/results-auth/
+.codegraph/
+
+progress.md
+worker-summary.md
+worker-*.md
+plan.md
+triage-*.md
+review-*.md

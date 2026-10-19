@@ -1,0 +1,11 @@
+# Real Gemini verification
+
+Run `bun run test:live-gemini`. This is a paid, opt-in real-agent gate, not part of the deterministic unit suite. It loads the actual extension through Pi 1.3.0's file loader and runs `google/gemini-3.8-flash`; it does not import the faux provider or script model responses. The existing managed Gemini credential is read into memory only. User Pi configuration is not modified.
+
+Acceptance requires actual successful tool results for tools, Tasks, resources, prompts and remote Skills; a server-initiated sampling request fulfilled by a second real Gemini call; a public DeepWiki MCP call; and an event delivered only after the agent is idle, starting another real Gemini turn. Fixture consent dialogs are approved through the normal UI callbacks. These approvals are test decisions, not production bypasses.
+
+The passing source run on 2026-10-16 took 36.3 seconds: 14 provider calls including nested sampling, 9 tool results, 4 agent starts, approximately $0.040 provider-reported cost. Evidence: `../verification-evidence/live-gemini-2026-10-16T13-21-49.187Z/result.json`, with separate metadata-only MCP trace. A preceding failed test assertion is retained in its own evidence directory: the public call succeeded, but the assertion incorrectly assumed the proxy rather than the dynamically registered namespace tool.
+
+Use `PI_MCP_COMPLETE_PACKED_ENTRY=/absolute/path/to/package/complete.ts bun run test:live-gemini` to verify a packed distribution. A deterministic-suite pass alone is not evidence of real-agent operation. This live gate establishes these workflows, not every modality or every protocol branch; the broader deterministic/conformance evidence remains separate.
+
+The existing `artifacts/pi-mcp-complete-0.1.0.tgz` also passed the same live gate through Pi's file loader, with dependencies supplied by the pinned installation. This second run took 36.3 seconds. Evidence: `../verification-evidence/live-gemini-2026-10-16T13-23-10.601Z/result.json`. Type checking and the existing host integration regression test passed after adding the runner and externally triggered event fixture. No production extension changes were necessary for these live workflows.

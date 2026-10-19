@@ -1,0 +1,7 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "__tests__/native-codemode-*.test.ts",
+    "verification/live-codemode-*.ts"
+  ]
+}
