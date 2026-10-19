@@ -50,6 +50,9 @@
     "pi-mcp-adapter": "cli.js"
   },
   "scripts": {
+    "prototype:durable": "node --import tsx prototypes/pi-durable/live.ts",
+    "test:durable": "vitest run --config prototypes/pi-durable/vitest.config.ts",
+    "typecheck:durable": "tsc -p tsconfig.pi-durable.json",
     "test:live-gemini": "node --import tsx verification/live-gemini.ts",
     "test:live-events-delivery": "node --import tsx verification/live-events-delivery.ts",
     "test:live-events-modes": "node --import tsx verification/live-events-modes.ts",
@@ -243,9 +246,10 @@
   "devDependencies": {
     "@earendil-works/pi-ai": "1.3.0",
     "@earendil-works/pi-coding-agent": "1.3.0",
+    "@earendil-works/pi-durable": "1.3.0",
     "@earendil-works/pi-tui": "1.3.0",
-    "@modelcontextprotocol/server": "2.3.1",
     "@modelcontextprotocol/conformance": "0.1.16",
+    "@modelcontextprotocol/server": "2.3.1",
     "@types/bun": "^1.0.0",
     "@types/cross-spawn": "6.0.6",
     "@types/node": "20.19.43",

@@ -1,0 +1,4 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["prototypes/pi-durable/**/*.ts"]
+}
